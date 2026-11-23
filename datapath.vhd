@@ -167,7 +167,7 @@ begin
         );
 
     -- regs temp
-    REG_A: registrador_16bits
+    INST_REG_A: registrador_16bits
         port map (
             clk       => clk,
             rst       => rst,
@@ -176,7 +176,7 @@ begin
             d_out     => reg_a
         );
 
-    REG_B: registrador_16bits
+    INST_REG_B: registrador_16bits
         port map (
             clk       => clk,
             rst       => rst,
@@ -198,7 +198,7 @@ begin
     with alu_src_b select
         ula_in_b <= reg_b    when "00",
                     x"0001"  when "01",  
-                    imed_ext when "10",  -
+                    imed_ext when "10",
                     reg_b    when others;
 
     -- LOGICA ULA
